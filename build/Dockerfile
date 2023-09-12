@@ -9,8 +9,6 @@ RUN apt update -y && \
 
 COPY webdav.conf /etc/nginx/sites-available/default
 
-RUN mkdir -p /bucket/files
-RUN chown -R www-data:www-data /bucket/files
-
 WORKDIR /bucket
+RUN mkdir -p /bucket/files
 COPY entrypoint.sh ./entrypoint.sh
